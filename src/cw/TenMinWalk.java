@@ -6,11 +6,9 @@ public class TenMinWalk {
 	
 	public static boolean isValid(char[] walk) {
 		
-		int north = 0;
-		int south = 0;
-		int east = 0;
-		int west = 0;
-		
+		// Variable declaration and initiation. 
+		int north = 0, south = 0, east = 0, west = 0;
+		// Total to compare to 10 minutes.  
 		int total = 0;
 		
 		for (int i = 0; i < walk.length; i++) {
