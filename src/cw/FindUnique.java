@@ -3,6 +3,9 @@ package cw;
 public class FindUnique {
 	
 	public static double arr1[] = {0, 0, 0.5, 0, 0};
+	public static double arr2[] = {1, 1, 2, 1, 1};
+	
+	// TRY WITH HASHMAP
 
 	public static double findUniq(double arr[]) {
 		
