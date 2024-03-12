@@ -7,6 +7,8 @@ public class Test {
 		System.out.println(TenMinWalk.isValid(TenMinWalk.walkArrayTest));
 		
 		System.out.println(FindUnique.findUniq(FindUnique.arr1));
+		System.out.println(FindUnique.findUniq2(FindUnique.arr1));
+
 		
 	}
 
