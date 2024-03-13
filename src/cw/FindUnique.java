@@ -41,7 +41,7 @@ public class FindUnique {
 	}
 	
 	// HashMap version ------------------------------------------------------------------------------------------------------
-	// Needs work
+	// Completed.
 	public static double findUniq2(double arr[]) {
 		
 		// Declare and initiate HashMap. 
@@ -61,8 +61,8 @@ public class FindUnique {
 		
 		// Find the element that only has the count of 1. 
 		for(int i = 0; i < arr.length; i++) {
-			if (elementCount.get(arr[i]) == 1) {
-				return elementCount.get(arr[i]);
+			if (elementCount.get(arr[i]) == 1) { // verify its count (key=value, value). 
+				return arr[i]; // return the unique element. 
 			}
 		}
 		
