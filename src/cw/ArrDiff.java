@@ -50,3 +50,10 @@ public class ArrDiff {
  * after finding a match, which would be unnecessary and less efficient.  The `break` statement helps 
  * optimize the search process by stopping it as soon as a match is found.
  * */
+
+/**
+ * Arrays immutable in java: 
+ * Immutable means we cannot modify it. If you have an immutable array in Java means refers to an array whose 
+ * content and size cannot be changed after it has been initialized
+ * Thus the `result` array. 
+ *  */
