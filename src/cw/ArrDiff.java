@@ -31,7 +31,9 @@ public class ArrDiff {
             }
         }
 
-        // Convert ArrayList to array
+        // Convert ArrayList to array --------------------------------------------------------------
+        // Declare and initialize array with number of indices. 
+        // Assign a value to each index. 
         int[] result = new int[nonRepeatingAValues.size()];
         for (int i = 0; i < nonRepeatingAValues.size(); i++) {
             result[i] = nonRepeatingAValues.get(i);
