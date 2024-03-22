@@ -21,7 +21,7 @@ public class ArrDiff {
             for (int j = 0; j < b.length; j++) {
                 if (a[i] == b[j]) {
                     foundInB = true;
-                    break;
+                    break; // Exit the inner loop once a match is found in array b. `Exit nested loop prematurely`.
                 }
             }
 
@@ -32,7 +32,7 @@ public class ArrDiff {
         }
 
         // Convert ArrayList to array --------------------------------------------------------------
-        // Declare and initialize array with number of indices. 
+        // Declare and initialize array with number of indices - Specify data type and number of elements. 
         // Assign a value to each index. 
         int[] result = new int[nonRepeatingAValues.size()];
         for (int i = 0; i < nonRepeatingAValues.size(); i++) {
@@ -43,3 +43,10 @@ public class ArrDiff {
 	}
 
 }
+
+/** 
+ * Nested Loop break statement: 
+ * Without the `break` statement, the loop would continue iterating over the elements of array `b` even 
+ * after finding a match, which would be unnecessary and less efficient.  The `break` statement helps 
+ * optimize the search process by stopping it as soon as a match is found.
+ * */
