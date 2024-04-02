@@ -12,6 +12,9 @@ public class HelpTheBookseller {
 		// iterate through the first array
 		for (int i = 0; i < lstOfArt.length; i++) {
 			// CHECK IF c or d ARE EMPTY, RETURN AN EMPTY String. ---  ---  ---  ---  ---  ---  ---  ---
+			if(lstOfArt.length == 0) {
+				return "";
+			}
 
 			// Base construction
 			StringBuilder construction = new StringBuilder(); // construction `tool` to help you build the `result` String.
@@ -25,6 +28,9 @@ public class HelpTheBookseller {
 			// now iterate through other array
 			for (int j = 0; j < lstOf1stLetter.length; j ++) {
 				// CHECK IF c or d ARE EMPTY, RETURN AN EMPTY String. ---  ---  ---  ---  ---  ---  ---  ---
+				if (lstOf1stLetter.length == 0) {
+					return "";
+				}
 				
 				// Ready each element from string to char 
 				char d = lstOf1stLetter[j].charAt(j);
