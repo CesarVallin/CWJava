@@ -11,7 +11,9 @@ public class Test {
 //		System.out.println(FindUnique.findUniq(FindUnique.arr1));
 //		System.out.println(FindUnique.findUniq2(FindUnique.arr1));
 
-		System.out.println(Arrays.toString(ArrDiff.arrayDiff(ArrDiff.testA, ArrDiff.testB)));
+//		System.out.println(Arrays.toString(ArrDiff.arrayDiff(ArrDiff.testA, ArrDiff.testB)));
+		
+		System.out.println(HelpTheBookseller.stockSummary(HelpTheBookseller.art, HelpTheBookseller.cd));
 		
 	}
 
