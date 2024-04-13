@@ -49,6 +49,8 @@ public class ArrDiff {
  * Without the `break` statement, the loop would continue iterating over the elements of array `b` even 
  * after finding a match, which would be unnecessary and less efficient.  The `break` statement helps 
  * optimize the search process by stopping it as soon as a match is found.
+ * 
+ * Remember, it is a nested loop.  It will break from the current index and iterate again 
  * */
 
 /**
