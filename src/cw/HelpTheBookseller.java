@@ -10,6 +10,9 @@ public class HelpTheBookseller {
 	
 	// cw `Help the bookseller !`
 	
+	// 1st parameter is the stocklist (L in example), 
+	// 2nd parameter is list of categories (M in example)
+	// Your task is to find all the books of L with codes belonging to each category of M and to sum their quantity according to each category.
 	public static String stockSummary(String lstOfArt[], String lstOf1stLetter[]) {
 		
 		// Declare and initiate a StringBuilder - remember, in java, Strings are immutable.
@@ -19,7 +22,6 @@ public class HelpTheBookseller {
 	    if(lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
 	        return "";
 	    }
-	    // CONTINUE AND REVIEW !!!!
 		
 		// iterate through the first array
 		for (int i = 0; i < lstOfArt.length; i++) {
@@ -28,7 +30,7 @@ public class HelpTheBookseller {
 			StringBuilder construction = new StringBuilder(); // construction `tool` to help you build the `result` String.
 			
 			// access first character - of each string - in the first string array. 
-			char c = lstOfArt[i].charAt(0); // method call on first element of string. 
+			char c = lstOfArt[i].charAt(0); // method call on first element of string.  String class charAt() method returns a char value.  
 			
 			// Variable quantity should be declared and initialized with a value of 0.
 			int quantity = 0; 
@@ -37,7 +39,8 @@ public class HelpTheBookseller {
 			for (int j = 0; j < lstOf1stLetter.length; j ++) {
 				
 				// Ready each element from string to char 
-				char d = lstOf1stLetter[j].charAt(j); // method call on each element of string. ---.charAt(j) might not be needed--- 
+				char d = lstOf1stLetter[j].charAt(j); // method call on each element of string. ---.charAt(j) might not be needed---
+				// More notes on this available!
 				
 				// CHECK LAST ITERATION - off scenario - meet this scenario first!!
 				// ------------------------------------------------------------------
