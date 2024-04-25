@@ -39,7 +39,7 @@ public class HelpTheBookseller {
 			for (int j = 0; j < lstOf1stLetter.length; j ++) {
 				
 				// Ready each element from string to char 
-				char d = lstOf1stLetter[j].charAt(j); // method call on each element of string. ---.charAt(j) might not be needed---
+				char d = lstOf1stLetter[j].charAt(0); // method call on each element of string. ---.charAt(j) might not be needed---
 				// More notes on this available!
 				
 				// CHECK LAST ITERATION - off scenario - meet this scenario first!!
@@ -51,6 +51,11 @@ public class HelpTheBookseller {
 					// access numeric value - of each string - in the first string array. 
 					quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", "")); // reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
 				}
+			}
+			
+			// SOLVED FOR C, WHICH DID NOT ADD ANYTHING!!
+			if(quantity == 0) {
+				continue;
 			}
 			
 			construction.append("(" + c + " : " + quantity + ")");
