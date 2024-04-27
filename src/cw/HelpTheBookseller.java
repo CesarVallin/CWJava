@@ -25,44 +25,34 @@ public class HelpTheBookseller {
 		
 		// iterate through the first array
 		for (int i = 0; i < lstOfArt.length; i++) {
-
 			// Base construction
-			StringBuilder construction = new StringBuilder(); // construction `tool` to help you build the `result` String.
-			
+			StringBuilder construction = new StringBuilder(); // construction `tool` to help you build the `result` String.		
 			// access first character - of each string - in the first string array. 
 			char c = lstOfArt[i].charAt(0); // method call on first element of string.  String class charAt() method returns a char value.  
 			
 			// Variable quantity should be declared and initialized with a value of 0.
-			int quantity = 0; 
-			
+			int quantity = 0; 		
 			// now iterate through other array
-			for (int j = 0; j < lstOf1stLetter.length; j ++) {
-				
+			for (int j = 0; j < lstOf1stLetter.length; j ++) {			
 				// Ready each element from string to char 
-				char d = lstOf1stLetter[j].charAt(0); // method call on each element of string. ---.charAt(j) might not be needed---
+				char d = lstOf1stLetter[j].charAt(0); // method call on each element of string.
 				// More notes on this available!
-				
-				// CHECK LAST ITERATION - off scenario - meet this scenario first!!
-				// ------------------------------------------------------------------
-				// if ()
-				
+					
 				// Conditional & utilize `quantity` variable. 
 				if (c == d) {
 					// access numeric value - of each string - in the first string array. 
 					quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", "")); // reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
 				}
-			}
-			
-			// SOLVED FOR C, WHICH DID NOT ADD ANYTHING!!
+			}		
+			// SOLVED FOR values that did not add anything!!
 			if(quantity == 0) {
 				continue;
 			}
 			
 			construction.append("(" + c + " : " + quantity + ")");
 			result.append(construction);
+			
 		}
-		
 		return result.toString();
 	}
-
 }
