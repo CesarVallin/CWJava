@@ -27,6 +27,10 @@ public class HelpTheBookseller {
 	    if(lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
 	        return "";
 	    }
+	    // Champion quantity
+	    int champQuantity = 0;
+	    
+	    
 		// iterate through the first array --- populate HashMap
 		for (int i = 0; i < lstOfArt.length; i++) {
 			char c = lstOfArt[i].charAt(0); // method call on the first element of each string.  String class charAt() method returns a char value.  
@@ -42,6 +46,7 @@ public class HelpTheBookseller {
 					if (c == d) {
 						// access numeric value - of each string - in the first string array. 
 						quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", "")); // reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
+						champQuantity += quantity;
 					}
 					charMap.put(d, quantity);
 				}
@@ -65,6 +70,7 @@ public class HelpTheBookseller {
 			construction.append("(" + theCharacter + " : " + theInteger + ")");
 			result.append(construction);
 		}
+		
 		return result.toString();
 	}
 }
