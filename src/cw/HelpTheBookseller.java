@@ -1,6 +1,7 @@
 package cw;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class HelpTheBookseller {
 	
@@ -18,7 +19,10 @@ public class HelpTheBookseller {
 		// Declare and initialize a HashMap - data structure
 		HashMap<Character, Integer> charMap = new HashMap<>();	
 		// Declare and initiate a StringBuilder - remember, in java, Strings are immutable.
-		StringBuilder result = new StringBuilder(); // call of StringBuilder method. 	
+		StringBuilder result = new StringBuilder(); // call of StringBuilder method. 
+		// Declare and initiate a StringBuilder for construction. 
+		StringBuilder construction = new StringBuilder();
+
 		// Check if lstOfArt or lstOf1stLetter is empty
 	    if(lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
 	        return "";
@@ -45,11 +49,18 @@ public class HelpTheBookseller {
 			if(charMap.containsKey(c)) {
 				// Get the value from the current existing key ~ murach's java
 				int quantity = charMap.get(c);
+				System.out.println(c + " " + quantity);
 				quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));
 			}	
 		}
 		
-		
+		// Again, this can be simpler if you separate concerns.  
+		// This is an over-all iteration of the HashMap
+		// Iterate through HashMap. // https://sentry.io/answers/iterate-hashmap-java/
+		for (Map.Entry<Character, Integer> entry : charMap.entrySet()) {
+			Character theCharacter = entry.getKey();
+			
+		}
 		
 		construction.append("(" + c + " : " + quantity + ")");
 		result.append(construction);
