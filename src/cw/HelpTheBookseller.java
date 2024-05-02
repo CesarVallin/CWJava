@@ -44,15 +44,16 @@ public class HelpTheBookseller {
 			}
 			if(charMap.containsKey(c)) {
 				// Get the value from the current existing key
-				int quantity = 
-			}
-				
-				
-				
-			construction.append("(" + c + " : " + quantity + ")");
-			result.append(construction);
-			
+				int quantity = charMap.get(c);
+				quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));
+			}	
 		}
+		
+		
+		
+		construction.append("(" + c + " : " + quantity + ")");
+		result.append(construction);
+		
 		return result.toString();
 	}
 }
