@@ -43,7 +43,7 @@ public class HelpTheBookseller {
 				}
 			}
 			if(charMap.containsKey(c)) {
-				// Get the value from the current existing key
+				// Get the value from the current existing key ~ murach's java
 				int quantity = charMap.get(c);
 				quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));
 			}	
