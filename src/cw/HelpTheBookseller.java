@@ -33,8 +33,7 @@ public class HelpTheBookseller {
 				// now iterate through other array
 				for (int j = 0; j < lstOf1stLetter.length; j ++) {			
 					// Ready each element from string to char 
-					char d = lstOf1stLetter[j].charAt(0); // method call on each element of string.
-							// More notes on this available!
+					char d = lstOf1stLetter[j].charAt(0); // method call on each element of string.  String class charAt() method returns a char value. 
 					// Conditional & utilize `quantity` variable. 
 					if (c == d) {
 						// access numeric value - of each string - in the first string array. 
