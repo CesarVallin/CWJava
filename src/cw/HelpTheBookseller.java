@@ -54,17 +54,17 @@ public class HelpTheBookseller {
 			}	
 		}
 		
+		// -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		// Again, this can be simpler if you separate concerns.  
 		// This is an over-all iteration of the HashMap
 		// Iterate through HashMap. // https://sentry.io/answers/iterate-hashmap-java/
 		for (Map.Entry<Character, Integer> entry : charMap.entrySet()) {
 			Character theCharacter = entry.getKey();
-			
+			Integer theInteger = entry.getValue();
+			// StringBuilder construction:
+			construction.append("(" + theCharacter + " : " + theInteger + ")");
+			result.append(construction);
 		}
-		
-		construction.append("(" + c + " : " + quantity + ")");
-		result.append(construction);
-		
 		return result.toString();
 	}
 }
