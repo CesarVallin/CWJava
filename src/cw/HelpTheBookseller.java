@@ -31,14 +31,15 @@ public class HelpTheBookseller {
 		// iterate through the first array
 		for (int i = 0; i < lstOfArt.length; i++) {
 			char c = lstOfArt[i].charAt(0); // method call on the first element of each string.  String class charAt() method returns a char value. 
-			System.out.println(c + " " + "first character of each stringElement on first array");
+			System.out.println(c + " - " + "1st char of each stringElement on 1st arr");
 			// iterate through other array
 			for (int j = 0; j < lstOf1stLetter.length; j++ ) {
 				// Ready each element from string to char
 				char d = lstOf1stLetter[j].charAt(0); // method call on string element.  String class charAt() method returns a char value. 
-				System.out.println(d + " " + "character of each stringElement on second array");
+				System.out.println(d + " - " + "char of each stringElement on 2nd array");
 				// Conditional to check if c & d match
 				if(c == d) {
+					System.out.println("MATCH!");
 					// Check to see if the char KEY does not exist in the HashMap and can be put in it with a new VALUE.  
 					if(!charMap.containsKey(c)) {
 						// declare a quantity variable for read-ability 
@@ -56,6 +57,9 @@ public class HelpTheBookseller {
 						charMap.put(c, quantity);			
 					}
 					
+				}
+				if (c != d) {
+					System.out.print("NO MATCH!!!");
 				}
 			}	
 		}
