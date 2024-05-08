@@ -26,36 +26,37 @@ public class HelpTheBookseller {
 		// Check if lstOfArt or lstOf1stLetter is empty
 	    if(lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
 	        return "";
-	    }
-	    // Champion quantity
-	    int champQuantity = 0;
+	    }	    
 	    
-	    
-		// iterate through the first array --- populate HashMap
+		// iterate through the first array
 		for (int i = 0; i < lstOfArt.length; i++) {
-			char c = lstOfArt[i].charAt(0); // method call on the first element of each string.  String class charAt() method returns a char value.  
-			// Check to see if the char can be added to HashMap
-			if(!charMap.containsKey(c)) {
-				// Variable quantity should be declared and initialized with a value of 0.
-				int quantity = 0; 			
-				// now iterate through other array
-				for (int j = 0; j < lstOf1stLetter.length; j ++) {			
-					// Ready each element from string to char 
-					char d = lstOf1stLetter[j].charAt(0); // method call on string element.  String class charAt() method returns a char value. 
-					// Conditional & utilize `quantity` variable. 
-					if (c == d) {
-						// access numeric value - of each string - in the first string array. 
-						quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", "")); // reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
-						champQuantity += quantity;
+			char c = lstOfArt[i].charAt(0); // method call on the first element of each string.  String class charAt() method returns a char value. 
+			System.out.println(c + " " + "first character of each stringElement on first array");
+			// iterate through other array
+			for (int j = 0; j < lstOf1stLetter.length; j++ ) {
+				// Ready each element from string to char
+				char d = lstOf1stLetter[j].charAt(0); // method call on string element.  String class charAt() method returns a char value. 
+				System.out.println(d + " " + "character of each stringElement on second array");
+				// Conditional to check if c & d match
+				if(c == d) {
+					// Check to see if the char KEY does not exist in the HashMap and can be put in it with a new VALUE.  
+					if(!charMap.containsKey(c)) {
+						// declare a quantity variable for read-ability 
+						int quantity = 0;
+						quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));// reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
+					    charMap.put(c, quantity);
 					}
-					charMap.put(d, quantity);
+					// Check to see if the char KEY exists in the HashMap.  If it does, add to its VALUE
+					if (charMap.containsKey(c)) {
+						// Get the value from the current existing key ~ murach's java
+						int quantity = charMap.get(c);
+						System.out.println(c + " " + quantity);
+						quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));
+						// update the value.
+						charMap.put(c, quantity);			
+					}
+					
 				}
-			}
-			if(charMap.containsKey(c)) {
-				// Get the value from the current existing key ~ murach's java
-				int quantity = charMap.get(c);
-				System.out.println(c + " " + quantity);
-				quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));
 			}	
 		}
 		
