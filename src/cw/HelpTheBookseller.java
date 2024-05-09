@@ -11,58 +11,56 @@ public class HelpTheBookseller {
 	
 	// cw `Help the bookseller !`
 	
-	// 1st parameter is the stocklist (L in example), 
-	// 2nd parameter is list of categories (M in example)
-	// Your task is to find all the books of L with codes belonging to each category of M and to sum their quantity according to each category.
+	// String lstOfArt[] is an array - list of art
+	// String lstOf1stLetter[] - list of first letter
+	// Your task is to find all the art associated with the list of first letter.
 	
 	public static String stockSummary(String lstOfArt[], String lstOf1stLetter[]) {
 		// Declare and initialize a HashMap - data structure
 		HashMap<Character, Integer> charMap = new HashMap<>();	
 		// Declare and initiate a StringBuilder - remember, in java, Strings are immutable.
-		StringBuilder result = new StringBuilder(); // call of StringBuilder method. 
+		StringBuilder result = new StringBuilder(); 
 		// Declare and initiate a StringBuilder for construction. 
 		StringBuilder construction = new StringBuilder();
 
 		// Check if lstOfArt or lstOf1stLetter is empty
 	    if(lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
 	        return "";
-	    }	    
+	    }
 	    
-		// iterate through the first array
-		for (int i = 0; i < lstOfArt.length; i++) {
-			char c = lstOfArt[i].charAt(0); // method call on the first element of each string.  String class charAt() method returns a char value. 
-			System.out.println(c + " - " + "1st char of each stringElement on 1st arr");
-			// iterate through other array
-			for (int j = 0; j < lstOf1stLetter.length; j++ ) {
-				// Ready each element from string to char
-				char d = lstOf1stLetter[j].charAt(0); // method call on string element.  String class charAt() method returns a char value. 
-				System.out.println(d + " - " + "char of each stringElement on 2nd array");
-				// Conditional to check if c & d match
-				if(c == d) {
-					System.out.println("MATCH!");
-					// Check to see if the char KEY does not exist in the HashMap and can be put in it with a new VALUE.  
-					if(!charMap.containsKey(c)) {
-						// declare a quantity variable for read-ability 
-						int quantity = 0;
-						quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));// reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
-					    charMap.put(c, quantity);
-					}
-					// Check to see if the char KEY exists in the HashMap.  If it does, add to its VALUE
-					if (charMap.containsKey(c)) {
-						// Get the value from the current existing key ~ murach's java
-						int quantity = charMap.get(c);
-						System.out.println(c + " " + quantity);
+	    // iterate through lstOf1stLetter array
+	    for (int i = 0; i < lstOf1stLetter.length; i++) {
+	    	// Ready each element from string to char
+	    	char c = lstOf1stLetter[i].charAt(0); // method call on String element.  String class charAt() method returns a char value. 
+            System.out.println("Compare current `c` element to `d` iteration");
+	    	System.out.println("c = " + c + " ...");
+	    	// iterate through lstOfArt array
+	    	for (int j = 0; j < lstOfArt.length; j++) {
+	    		char d = lstOfArt[j].charAt(0); // method call on first element of each String.  String class charAt() method returns a char value.  
+	    		System.out.println("d = " + d);
+	    		// Conditional to check if c & d match
+	    		if(c == d) {
+	    			System.out.println("MATCH!");
+	    			// Check to see if the char KEY does not exist in the HashMap and can be `.put()` in it with a VALUE
+	    			if (!charMap.containsKey(c)) {
+	    				// declare a quantity variable for read-ability and manipulation
+	    				int quantity = 0;
+	    				// could have also be written: c.replaceAll( );
+	    				quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));// reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
+	    				charMap.put(c, quantity);
+	    			} else {
+	    				// Get the VALUE from the current existing KEY ~ murach's Java
+	    				int quantity = charMap.get(c);
+						System.out.println("HashMap already contains - " + c + " . Its Integer is " + quantity + '\n');
 						quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));
-						// update the value.
-						charMap.put(c, quantity);			
-					}
-					
-				}
-				if (c != d) {
-					System.out.print("NO MATCH!!!");
-				}
-			}	
-		}
+						charMap.put(c, quantity);
+	    			}
+	    		// Just for testing...
+	    		if (c != d) {
+					System.out.print("NO MATCH!!!" + '\n');
+	    		}
+	    	}
+	    }
 		
 		// -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		// Again, this can be simpler if you separate concerns.  
