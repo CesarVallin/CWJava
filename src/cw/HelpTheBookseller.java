@@ -43,18 +43,21 @@ public class HelpTheBookseller {
 	    			System.out.println("MATCH!");
 	    			// Check to see if the char KEY does not exist in the HashMap and can be `.put()` in it with a VALUE
 	    			if (!charMap.containsKey(c)) {
+	    				System.out.println("KEY-VALUE not contained in HashMap... will put in HashMap...");
 	    				// declare a quantity variable for read-ability and manipulation
 	    				int quantity = 0;
 	    				// could have also be written: c.replaceAll( );
-	    				quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));// reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
+	    				quantity += Integer.parseInt(lstOfArt[j].replaceAll("[^0-9]", ""));// reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
+	    				System.out.println("KEY- " + c + " " + "VALUE- " + quantity);
 	    				charMap.put(c, quantity);
-	    			} else {
+	    			} else { // if the char KEY already exists in the HasMap, then update its VALUE with `.put()`
 	    				// Get the VALUE from the current existing KEY ~ murach's Java
 	    				int quantity = charMap.get(c);
 						System.out.println("HashMap already contains - " + c + " . Its Integer is " + quantity + '\n');
-						quantity += Integer.parseInt(lstOfArt[i].replaceAll("[^0-9]", ""));
+						quantity += Integer.parseInt(lstOfArt[j].replaceAll("[^0-9]", ""));
 						charMap.put(c, quantity);
 	    			}
+	    		}
 	    		// Just for testing...
 	    		if (c != d) {
 					System.out.print("NO MATCH!!!" + '\n');
