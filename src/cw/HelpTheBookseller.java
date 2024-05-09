@@ -73,10 +73,11 @@ public class HelpTheBookseller {
 		// -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		// Again, this can be simpler if you separate concerns.  
 		// This is an over-all iteration of the HashMap
-		// Iterate through HashMap. // https://sentry.io/answers/iterate-hashmap-java/
+		// Iterate through HashMap. // https://sentry.io/answers/iterate-hashmap-java/    
 		for (Map.Entry<Character, Integer> entry : charMap.entrySet()) {
 			Character theCharacter = entry.getKey();
 			Integer theInteger = entry.getValue();
+				
 			// StringBuilder construction:
 			construction.append("(" + theCharacter + " : " + theInteger + ")");
 			// Append `construction` to `result` AND reset/clear `construction` for next iteration to avoid duplication before appending again!!!
@@ -88,3 +89,7 @@ public class HelpTheBookseller {
 		return result.toString();
 	}
 }
+
+// Check out 
+// https://www.geeksforgeeks.org/how-to-get-first-or-last-entry-from-java-linkedhashmap/
+// create a count variable to compare with `charMap.size()` and fix output format. 
