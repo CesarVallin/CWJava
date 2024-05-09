@@ -32,15 +32,16 @@ public class HelpTheBookseller {
 	    for (int i = 0; i < lstOf1stLetter.length; i++) {
 	    	// Ready each element from string to char
 	    	char c = lstOf1stLetter[i].charAt(0); // method call on String element.  String class charAt() method returns a char value. 
+	    	System.out.println("-------------------------------------------");
             System.out.println("Compare current `c` element to `d` iteration");
-	    	System.out.println("c = " + c + " ...");
+	    	System.out.println("c = " + c + " ***");
 	    	// iterate through lstOfArt array
 	    	for (int j = 0; j < lstOfArt.length; j++) {
 	    		char d = lstOfArt[j].charAt(0); // method call on first element of each String.  String class charAt() method returns a char value.  
 	    		System.out.println("d = " + d);
 	    		// Conditional to check if c & d match
 	    		if(c == d) {
-	    			System.out.println("MATCH!");
+	    			System.out.println("MATCH! ---");
 	    			// Check to see if the char KEY does not exist in the HashMap and can be `.put()` in it with a VALUE
 	    			if (!charMap.containsKey(c)) {
 	    				System.out.println("KEY-VALUE not contained in HashMap... will put in HashMap...");
@@ -48,13 +49,17 @@ public class HelpTheBookseller {
 	    				int quantity = 0;
 	    				// could have also be written: c.replaceAll( );
 	    				quantity += Integer.parseInt(lstOfArt[j].replaceAll("[^0-9]", ""));// reference: https://www.geeksforgeeks.org/extract-all-integers-from-the-given-string-in-java/
-	    				System.out.println("KEY- " + c + " " + "VALUE- " + quantity);
+	    				System.out.println("... KEY- " + c + ", VALUE- " + quantity);
 	    				charMap.put(c, quantity);
 	    			} else { // if the char KEY already exists in the HasMap, then update its VALUE with `.put()`
 	    				// Get the VALUE from the current existing KEY ~ murach's Java
 	    				int quantity = charMap.get(c);
-						System.out.println("HashMap already contains - " + c + " . Its Integer is " + quantity + '\n');
-						quantity += Integer.parseInt(lstOfArt[j].replaceAll("[^0-9]", ""));
+						System.out.println("KEY-VALUE contained in HashMap: " + "KEY- " + c + ", VALUE- " + quantity);
+						// add-update existing VALUE to new VALUE
+						int addUpdateIntegerVALUE = Integer.parseInt(lstOfArt[j].replaceAll("[^0-9]", ""));
+						System.out.println("... adding " + addUpdateIntegerVALUE + " to VALUE");
+						quantity += addUpdateIntegerVALUE;
+						System.out.println("updated KEY-VALUE = " + "KEY- " + c + ", VALUE- " + quantity);
 						charMap.put(c, quantity);
 	    			}
 	    		}
@@ -74,7 +79,10 @@ public class HelpTheBookseller {
 			Integer theInteger = entry.getValue();
 			// StringBuilder construction:
 			construction.append("(" + theCharacter + " : " + theInteger + ")");
+			// Append `construction` to `result` AND reset/clear `construction` for next iteration to avoid duplication before appending again!!!
+			// Otherwise, you will append the constructed string to the result within the loop, causing duplication.
 			result.append(construction);
+			construction.setLength(0);
 		}
 		
 		return result.toString();
