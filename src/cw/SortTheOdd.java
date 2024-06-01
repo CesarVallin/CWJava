@@ -12,6 +12,14 @@ public class SortTheOdd {
 			stockArray[num] = num;
 		}
 		// void method to `modify` stockArray - odd numbers
+		static void oddInteger(int num, int[] stockArray) {
+			
+			for (int j = 0; j < stockArray.length; j++) {
+				
+			}
+			
+			stockArray[num] = num;
+		}
 	}
 	
 	public static int[] sortArray(int[] array) {
