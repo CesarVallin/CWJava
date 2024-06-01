@@ -11,6 +11,7 @@ public class SortTheOdd {
 		static void evenInteger(int num) {
 			stockArray[num] = num;
 		}
+		// void method to `modify` stockArray - odd numbers
 	}
 	
 	public static int[] sortArray(int[] array) {
@@ -24,7 +25,8 @@ public class SortTheOdd {
 				// Tools class - even Integer
 				Tools.evenInteger(i);
 			}
-			//
+			// Just switch them! criss-cross apple sauce
+			// check for the lesser number ahead
 			if(array[i] % 2 != 0) {
 				
 			}
