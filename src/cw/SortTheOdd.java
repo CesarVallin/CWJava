@@ -24,7 +24,7 @@ public class SortTheOdd {
 	
 	public static int[] sortArray(int[] array) {
 		
-		// Tools class - `no-modifications` array now has the same length as `array` parameter
+		// Tools class - `no-modifications` array now has the same length as `array` parameter - with all values initialized to zero. 
 		Tools.stockArray = new int[array.length];
 		// Loop through array parameter
 		for (int i = 0; i < array.length; i++) {
