@@ -36,13 +36,13 @@ public class SortTheOdd {
 	}
 	
 	// Main
-	public static int[] sortArray(int[] array) {
-		
+	public static int[] sortArray(int[] array) {		
 		// Tools class - `no-modifications` array now has the same length as `array` parameter - with all values initialized to zero. 
-		Tools.stockArray = new int[array.length];
-		
-		// Tools class - `ordered odds only` - based on `int[] array` parameter
-		ArrayList<Integer> ascendingOdds = Tools.oddIntegers(Tools.stockArray);
+		Tools.stockArray = new int[array.length];	
+		// Tools class - `ordered odds only` - based on `int[] array` parameter.  ArrayList contains all odd numbers in ascending order
+		ArrayList<Integer> ascendingOdds = Tools.oddIntegers(array); // HERE!!
+		// made up iterator index for accessing ascendingOdds values
+		int oddIteratorIndex = 0;
 		
 		// Loop through array parameter
 		for (int i = 0; i < array.length; i++) {
@@ -50,17 +50,13 @@ public class SortTheOdd {
 			if(array[i] % 2 == 0) {
 				// Tools class - even Integer
 				Tools.evenInteger(i, array[i]);
-			}
-			
-			
-			// conditional for odd number - checking through a sorted array list
+			}		
+			// conditional for odd number - checking through a sorted array list - utilizing `oddIteratorIndex`
 			if(array[i] % 2 != 0) {
-				for (int j = 0; j < ascendingOdds.size(); j++) {
-					Tools.oddInteger(i, ascendingOdds.get(j));
-				}
+				Tools.oddInteger(i, ascendingOdds.get(oddIteratorIndex));
+				oddIteratorIndex++;
 			}	
 		}
-			
 		return Tools.stockArray;
 	}
 
