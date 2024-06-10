@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class SortTheOdd {
+	// Values to test
+	public static int[] test1 = new int[] {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 	
 	// private class for SortTheOdd
 	// Tools
@@ -33,6 +35,7 @@ public class SortTheOdd {
 		}
 	}
 	
+	// Main
 	public static int[] sortArray(int[] array) {
 		
 		// Tools class - `no-modifications` array now has the same length as `array` parameter - with all values initialized to zero. 
@@ -40,22 +43,24 @@ public class SortTheOdd {
 		
 		// Tools class - `ordered odds only` - based on `int[] array` parameter
 		ArrayList<Integer> ascendingOdds = Tools.oddIntegers(Tools.stockArray);
+		
 		// Loop through array parameter
 		for (int i = 0; i < array.length; i++) {
-	
 			// conditional for even number - keep index of element / no sorting. 
 			if(array[i] % 2 == 0) {
 				// Tools class - even Integer
 				Tools.evenInteger(i, array[i]);
 			}
+			
+			
 			// conditional for odd number - checking through a sorted array list
 			if(array[i] % 2 != 0) {
 				for (int j = 0; j < ascendingOdds.size(); j++) {
-					Tools.oddInteger(j, ascendingOdds.get(j));
+					Tools.oddInteger(i, ascendingOdds.get(j));
 				}
-			}
+			}	
 		}
-		
+			
 		return Tools.stockArray;
 	}
 

@@ -13,8 +13,9 @@ public class Test {
 
 //		System.out.println(Arrays.toString(ArrDiff.arrayDiff(ArrDiff.testA, ArrDiff.testB)));
 		
-		System.out.println(HelpTheBookseller.stockSummary(HelpTheBookseller.art, HelpTheBookseller.cd));
+//		System.out.println(HelpTheBookseller.stockSummary(HelpTheBookseller.art, HelpTheBookseller.cd));
 		
+		System.out.println(Arrays.toString(SortTheOdd.sortArray(SortTheOdd.test1)));
 	}
 
 }
