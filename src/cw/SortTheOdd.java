@@ -1,5 +1,8 @@
 package cw;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+
 public class SortTheOdd {
 	
 	// private class for SortTheOdd
@@ -8,17 +11,20 @@ public class SortTheOdd {
 		// Create a `no-modifications` stock array
 		static int[] stockArray;
 		// void method to `modify` stockArray - even numbers
-		static void evenInteger(int num) {
-			stockArray[num] = num;
+		static void evenInteger(int i, int num) {
+			stockArray[i] = num;
 		}
-		// void method to `modify` stockArray - odd numbers
-		static void oddInteger(int num, int[] stockArray) {
-			
-			for (int j = 0; j < stockArray.length; j++) {
-				
+		
+		// method to return only odd numbers, sorted
+		static ArrayList<Integer>oddIntegers(int[] arrayPlaceholder) {
+			ArrayList<Integer> odds = new ArrayList<Integer>();
+			for (int j = 0; j < arrayPlaceholder.length; j++) {
+				if (arrayPlaceholder[j] %2 != 0) {
+					odds.add(arrayPlaceholder[j]);
+				}
 			}
-			
-			stockArray[num] = num;
+			odds.sort((Comparator.naturalOrder()));	
+			return odds;
 		}
 	}
 	
@@ -28,10 +34,11 @@ public class SortTheOdd {
 		Tools.stockArray = new int[array.length];
 		// Loop through array parameter
 		for (int i = 0; i < array.length; i++) {
+	
 			// conditional for even number - keep index of element / no sorting. 
 			if(array[i] % 2 == 0) {
 				// Tools class - even Integer
-				Tools.evenInteger(i);
+				Tools.evenInteger(i, array[i]);
 			}
 			// Just switch them! criss-cross apple sauce
 			// check for the lesser number ahead
