@@ -16,6 +16,11 @@ public class Test {
 //		System.out.println(HelpTheBookseller.stockSummary(HelpTheBookseller.art, HelpTheBookseller.cd));
 		
 		System.out.println(Arrays.toString(SortTheOdd.sortArray(SortTheOdd.test1)));
+		
+		for (int i = 0; i < SortTheOdd.oddsTest.size(); i++) {
+			System.out.println(SortTheOdd.oddsTest.get(i));
+		}
+		
 	}
 
 }

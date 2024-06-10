@@ -6,6 +6,7 @@ import java.util.Comparator;
 public class SortTheOdd {
 	// Values to test
 	public static int[] test1 = new int[] {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+	public static ArrayList<Integer> oddsTest = Tools.oddIntegers(test1);
 	
 	// private class for SortTheOdd
 	// Tools
@@ -20,8 +21,7 @@ public class SortTheOdd {
 		static void oddInteger(int i, int num) {
 			stockArray[i] = num;
 		}
-		
-		
+				
 		// method to return only odd numbers, sorted, ready for comparison
 		static ArrayList<Integer>oddIntegers(int[] arrayPlaceholder) {
 			ArrayList<Integer> odds = new ArrayList<Integer>();
