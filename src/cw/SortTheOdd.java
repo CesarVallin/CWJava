@@ -9,7 +9,7 @@ public class SortTheOdd {
 	public static ArrayList<Integer> oddsTest = Tools.oddIntegers(test1);
 	
 	// private class for SortTheOdd
-	// Tools
+	// Tools pack!
 	private class Tools {
 		// Create a `no-modifications` stock array
 		static int[] stockArray;
@@ -20,8 +20,7 @@ public class SortTheOdd {
 		// void method to `modify` stockArray - odd numbers
 		static void oddInteger(int i, int num) {
 			stockArray[i] = num;
-		}
-				
+		}			
 		// method to return only odd numbers, sorted, ready for comparison
 		static ArrayList<Integer>oddIntegers(int[] arrayPlaceholder) {
 			ArrayList<Integer> odds = new ArrayList<Integer>();
@@ -37,13 +36,12 @@ public class SortTheOdd {
 	
 	// Main
 	public static int[] sortArray(int[] array) {		
-		// Tools class - `no-modifications` array now has the same length as `array` parameter - with all values initialized to zero. 
+		// Tools class - no-modifications `stockArray` now has the same length as `array` parameter - with all values initialized to zero.  -->
 		Tools.stockArray = new int[array.length];	
-		// Tools class - `ordered odds only` - based on `int[] array` parameter.  ArrayList contains all odd numbers in ascending order
+		// Tools class - `ordered odds only` - based on `int[] array` parameter.  ArrayList contains all its odd numbers in ascending order -->
 		ArrayList<Integer> ascendingOdds = Tools.oddIntegers(array); // HERE!!
-		// made up iterator index for accessing ascendingOdds values
-		int oddIteratorIndex = 0;
-		
+		// made up iterator index for accessing ascendingOdds values, outside of for loop.
+		int oddIteratorIndex = 0;																										// \/
 		// Loop through array parameter
 		for (int i = 0; i < array.length; i++) {
 			// conditional for even number - keep index of element / no sorting. 
@@ -54,7 +52,7 @@ public class SortTheOdd {
 			// conditional for odd number - checking through a sorted array list - utilizing `oddIteratorIndex`
 			if(array[i] % 2 != 0) {
 				Tools.oddInteger(i, ascendingOdds.get(oddIteratorIndex));
-				oddIteratorIndex++;
+				oddIteratorIndex++; 																								   // /\
 			}	
 		}
 		return Tools.stockArray;
