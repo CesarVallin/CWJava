@@ -26,12 +26,12 @@ public class EncryptThis {
 	public static String encryptThis(String text) {
 		// Declare and initialize StringBuilder result
 		StringBuilder result = new StringBuilder();
+		// Declare and initialize StringBuilder for modifications
+		StringBuilder construction = new StringBuilder();
 		// Split input text into words
-		String[] words = text.split(" ");
+		String[] words = text.split(" "); // SEE NOTE ON BOTTOM 
 		
 		for (int i = 0; i < words.length; i++) {
-			// Declare and initialize StringBuilder for modifications
-			StringBuilder construction = new StringBuilder();
 			// Declare char placeholder for second char of string
 			char secondChar = 0;
 			
@@ -57,9 +57,13 @@ public class EncryptThis {
 				}	
 			}
 			result.append(construction).append(secondChar).append(" ");
+			// re-set construction StringBuilder
+			construction.setLength(0);
 				
 		}
 		return result.toString().trim();
 	}
-
 }
+
+// The split(" ") method divides the input string into an array of words based on spaces. 
+// If there are no spaces, it will return an array with a single element containing the whole word
