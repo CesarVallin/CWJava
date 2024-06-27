@@ -1,4 +1,5 @@
 package cw;
+// https://www.codewars.com/kata/5848565e273af816fb000449/train/java
 
 public class EncryptThis {
 	
@@ -19,7 +20,6 @@ public class EncryptThis {
 		static char currentChar(String str, int num) {
 			return str.charAt(num);
 		}
-		
 	}
 	
 	// Main
@@ -56,11 +56,9 @@ public class EncryptThis {
 					construction.append(Tools.currentChar(words[i], j));
 				}	
 			}
-			
 			result.append(construction).append(secondChar).append(" ");
 				
-			}
-		
+		}
 		return result.toString().trim();
 	}
 
