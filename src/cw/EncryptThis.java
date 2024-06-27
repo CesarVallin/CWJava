@@ -39,10 +39,12 @@ public class EncryptThis {
 			// check for first index
 			if (i == 0) {
 				result.append(Tools.asciiValue(text));
+				continue;
 			}
 			// check for second index
 			if (i == 1) {
 				result.append(Tools.lastChar(text));
+				continue;
 			} else {
 				result.append(Tools.currentChar(text, i));
 			}	
