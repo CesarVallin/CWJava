@@ -1,9 +1,6 @@
 package cw;
 
 public class EncryptThis {
-	// values to test
-	public static String test1 = "Hello";
-	public static String test2 = "hello world";
 	
 	// Tools pack class
 	private class Tools {
@@ -22,37 +19,49 @@ public class EncryptThis {
 		static char currentChar(String str, int num) {
 			return str.charAt(num);
 		}
+		
 	}
 	
 	// Main
 	public static String encryptThis(String text) {
 		// Declare and initialize StringBuilder result
 		StringBuilder result = new StringBuilder();
-		// Declare and initialize StringBuilder for modifications
-		StringBuilder construction = new StringBuilder();
+		// Split input text into words
+		String[] words = text.split(" ");
 		
-		for (int i = 0; i < text.length(); i++) {
-			// break out of the loop on the last index
-			if (i == text.length() - 1) {
-				break;
+		for (int i = 0; i < words.length; i++) {
+			// Declare and initialize StringBuilder for modifications
+			StringBuilder construction = new StringBuilder();
+			// Declare char placeholder for second char of string
+			char secondChar = 0;
+			
+			for (int j = 0; j < words[i].length(); j++) {
+				// assign value ot secondChar
+				secondChar = Tools.secondChar(words[i]);
+				// break out of the loop on the last index
+				if (j == words[i].length() - 1) {
+					break;
+				}
+				// check for first index
+				if (j == 0) {
+					construction.append(Tools.asciiValue(words[i]));
+					continue;
+				}
+				// check for second index
+				if (j == 1) {
+					construction.append(Tools.lastChar(words[i]));
+					continue;
+				} else {
+					// add remaining non-conditional characters
+					construction.append(Tools.currentChar(words[i], j));
+				}	
 			}
-			// check for first index
-			if (i == 0) {
-				result.append(Tools.asciiValue(text));
-				continue;
+			
+			result.append(construction).append(secondChar).append(" ");
+				
 			}
-			// check for second index
-			if (i == 1) {
-				result.append(Tools.lastChar(text));
-				continue;
-			} else {
-				result.append(Tools.currentChar(text, i));
-			}	
-		}
 		
-		result.append(Tools.secondChar(text));
-		
-		return result.toString();
+		return result.toString().trim();
 	}
 
 }
