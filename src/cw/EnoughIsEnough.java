@@ -2,7 +2,17 @@ package cw;
 
 import java.util.ArrayList;
 
+// https://www.codewars.com/kata/554ca54ffa7d91b236000023/train/java
+// Try it with a HashMap instead!!
+
 public class EnoughIsEnough {
+	
+	// Values to test
+	public static int[] test1 = {1,2,3,1,2,1,2,3};
+	public static int test1a = 2;
+	public static int[] test2 = {20,37,20,21};
+	public static int test2a = 1;
+	
 	
 	// Tools pack class
 	private class Tools {
@@ -11,15 +21,17 @@ public class EnoughIsEnough {
 		static ArrayList<Integer> loopAndPopulateArrayList(int[] arrayParam, int maxOccurences) {
 			// field to populate array with a maxOccurrences number
 			ArrayList<Integer> maxOccurrList = new ArrayList<>();
+			
 			for (int i = 0; i < arrayParam.length; i++) {
-				// Start occurence counter
-				int occurenceCounter = 0;
-				// nested loop to target/compare i to j
-				for (int j = 0; j < arrayParam.length; j++) {
-					if (arrayParam[i] == arrayParam[j]) {
-						occurenceCounter ++;
-					}				
-				}
+				// Start occurence counter - Rigged
+				int occurenceCounter = 1;
+				// Think of this nested loop as a default to check the `maxOccurList` ArrayList after an item has been added. 
+				// Count occurrences of arrayParam[i] in maxOccurrList - Rigged
+                for (int j = 0; j < maxOccurrList.size(); j++) {
+                    if (arrayParam[i] == maxOccurrList.get(j)) {
+                    	occurenceCounter++;
+                    }
+                }
 				// conditional outside of nested loop to make a decision to include integer in array list or not based on comparator
 				if (occurenceCounter <= maxOccurences) {
 					// add current index
