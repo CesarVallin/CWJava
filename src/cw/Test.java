@@ -21,8 +21,12 @@ public class Test {
 //			System.out.println(SortTheOdd.oddsTest.get(i));
 //		}
 		
-		System.out.println(EncryptThis.encryptThis("Hello") + " " + EncryptThis.encryptThis("Hello").length());
-		System.out.println(EncryptThis.encryptThis("hello world") + " " + EncryptThis.encryptThis("hello world").length());
+//		System.out.println(EncryptThis.encryptThis("Hello") + " " + EncryptThis.encryptThis("Hello").length());
+//		System.out.println(EncryptThis.encryptThis("hello world") + " " + EncryptThis.encryptThis("hello world").length());
+		
+		System.out.println(Arrays.toString(EnoughIsEnough.deleteNth(EnoughIsEnough.test1, EnoughIsEnough.test1a)));
+		System.out.println(EnoughIsEnough.deleteNth(EnoughIsEnough.test2, EnoughIsEnough.test2a));
+
 
 	}
 
