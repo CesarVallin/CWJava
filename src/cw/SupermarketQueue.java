@@ -14,12 +14,7 @@ public class SupermarketQueue {
 			return total;
 		}
 		
-		// Check for lowest number in Queue based on Tills n
-		// Add that number to a time variable 
-		// subtract from largest comparison 
-		// @ end, add remainder of whatever was largest
-		
-		// method to get the smallest number from a smaller version of array
+		// method to get the smallest number from a comparison version of array
 		static int findSmallest(int [] customers, int n) {
 			int smallest = customers[0];
 			for (int i = 0; i < n; i++) {
@@ -30,7 +25,7 @@ public class SupermarketQueue {
 			return smallest;
 		}
 		
-		// method to get the largest number from a smaller verson of array
+		// method to get the largest number from a comparison version of array
 		static int findBiggest(int [] customers, int n) {
 			int biggest = customers[0];
 			for (int i = 0; i < n; i++) {
@@ -41,7 +36,11 @@ public class SupermarketQueue {
 			return biggest;
 		}
 		
-		// methods & variables to modify comparisons?
+		// HashMap!! only two key-value pairs, smallest and biggest.  
+		// utilize these values to update separate variables until the end.  Keep adding smallest, at the end subtract biggest from smallest and add it too!
+		// Initiate a HasMap populated with `n` number of tills
+		// find smallest Queue, add to separate variable, remove from HashMap, and subtract all key-values the value of smallest, then continue with next `array loop iteration`
+		
 		
 	}
 	
