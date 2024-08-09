@@ -14,12 +14,11 @@ public class SupermarketQueue {
 			return total;
 		}
 		
-		// Check for greater number in Queue based on Tills n
-		// Add that number to a time variable. 
-		// Subtract lesser number(s) that made it through the first comparison 
-		// If there is still a greater number, subtract from it again, otherwise, new number(s) becomes greatest, and new greatest will be subtracted by old greatest. 
+		// Check for lowest number in Queue based on Tills n
+		// Add that number to a time variable 
+		// subtract from largest comparison 
+		// @ end, add remainder of whatever was largest
 		
-		// Keep looping.  
 		
 		
 	}
