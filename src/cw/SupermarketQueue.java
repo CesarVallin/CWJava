@@ -19,7 +19,29 @@ public class SupermarketQueue {
 		// subtract from largest comparison 
 		// @ end, add remainder of whatever was largest
 		
+		// method to get the smallest number from a smaller version of array
+		static int findSmallest(int [] customers, int n) {
+			int smallest = customers[0];
+			for (int i = 0; i < n; i++) {
+				if (customers[i] < smallest) {
+					smallest = customers[i];
+				}
+			}
+			return smallest;
+		}
 		
+		// method to get the largest number from a smaller verson of array
+		static int findBiggest(int [] customers, int n) {
+			int biggest = customers[0];
+			for (int i = 0; i < n; i++) {
+				if (customers[i] > biggest) {
+					biggest = customers[i];
+				}
+			}
+			return biggest;
+		}
+		
+		// methods & variables to modify comparisons?
 		
 	}
 	
