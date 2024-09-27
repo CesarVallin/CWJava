@@ -31,6 +31,7 @@ public class Test {
 		System.out.println(RevRot.Tools.subStrngNumTotal("127"));
 		System.out.println(RevRot.Tools.isDivisibleBy2(10));
 		System.out.println(RevRot.Tools.reverseString("Hello"));
+		System.out.println(RevRot.Tools.rotateLeftByOne("Hello"));
 		
 	}
 

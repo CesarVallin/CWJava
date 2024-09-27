@@ -48,6 +48,14 @@ public class RevRot {
 			toolString.reverse(); // actual reverse
 			return toolString.toString(); // expected output from method is a String, not StringBuilder
 		}
+		
+		// 5. ---------------------------------------------------------------------------
+		static String rotateLeftByOne(String subStringParam) {
+			StringBuilder toolString = new StringBuilder(); // --> strings are immutable, thus StringBuilder class
+			toolString.append(subStringParam.substring(1)); // only identifying beginning index, begins here and extends to the end. 
+			toolString.append(subStringParam.substring(0, 1)); // begin index inclusive, end index exclusive
+			return toolString.toString();
+		}
 	}
 	
 	public static String revRot(String strng, int sz) {
