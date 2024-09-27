@@ -10,14 +10,14 @@ public class RevRot {
 		// 5. Method to rotate to the left by one position
 		// 6. Method to check conditionals stated on problem
 		
-		// 1. 
+		// 1. ---------------------------------------------------------------------------
 		static String subStrng(String strng, int sz) {
 			String str = new String(strng); // initialize String object
 			return str.substring(0, sz);
 		}
 		
 		
-		// 2. 
+		// 2. ---------------------------------------------------------------------------
 		static int subStrngNumTotal(String strng) {
 			int total = 0;
 			int digit;
@@ -32,12 +32,22 @@ public class RevRot {
 		}
 		
 		
-//		// 3. 
-//		 static boolean isDivisibleByTwo(int subStrnParse) {
-//			 boolean isDivisible;
-//			 if()
-//			 return true;
-//		 }
+		// 3. ---------------------------------------------------------------------------
+		static boolean isDivisibleBy2(int subStrngNumTotal) {
+			boolean divisibleBy2 = false;
+			if (subStrngNumTotal %2 == 0) {
+				divisibleBy2 = true;
+			}
+			return divisibleBy2;
+		}
+		
+		// 4. ---------------------------------------------------------------------------
+		static String reverseString(String subString) {
+			StringBuilder toolString = new StringBuilder(); // remember strings are immutable, thus StringBuilder class
+			toolString.append(subString);
+			toolString.reverse(); // actual reverse
+			return toolString.toString(); // expected output from method is a String, not StringBuilder
+		}
 	}
 	
 	public static String revRot(String strng, int sz) {

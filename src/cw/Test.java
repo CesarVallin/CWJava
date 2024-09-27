@@ -29,7 +29,8 @@ public class Test {
 
 		System.out.println(RevRot.Tools.subStrng("Hello", 2));
 		System.out.println(RevRot.Tools.subStrngNumTotal("127"));
-		
+		System.out.println(RevRot.Tools.isDivisibleBy2(10));
+		System.out.println(RevRot.Tools.reverseString("Hello"));
 		
 	}
 
