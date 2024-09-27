@@ -28,6 +28,9 @@ public class Test {
 //		System.out.println(EnoughIsEnough.deleteNth(EnoughIsEnough.test2, EnoughIsEnough.test2a));
 
 		System.out.println(RevRot.Tools.subStrng("Hello", 2));
+		System.out.println(RevRot.Tools.subStrngParse("127"));
+		
+		
 	}
 
 }
