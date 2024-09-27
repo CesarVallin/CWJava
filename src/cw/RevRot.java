@@ -4,11 +4,11 @@ public class RevRot {
 	
 	 class Tools {
 		// 1. Method to give me the substring
-		// 2. Method to convert substring into an integer
-		// 2a. Method to tell if it is divisible by 2
-		// 3. Method to reverse substring
-		// 4. Method to rotate to the left by one position
-		// 5. Method to check conditionals stated on problem
+		// 2. Method to parse each char of string into an integer and add one by one
+		// 3. Method to tell if it is divisible by 2
+		// 4. Method to reverse substring
+		// 5. Method to rotate to the left by one position
+		// 6. Method to check conditionals stated on problem
 		
 		// 1. 
 		static String subStrng(String strng, int sz) {
@@ -16,14 +16,28 @@ public class RevRot {
 			return str.substring(0, sz);
 		}
 		
-		// 2. 
-		static Integer subStrngParse(String strng) {
-			String str = new String(strng); // initialize String object
-			return Integer.parseInt(str);
-		}
 		
 		// 2. 
-		// static boolean isDivisibleByTwo(String)
+		static int subStrngNumTotal(String strng) {
+			int total = 0;
+			int digit;
+			char c;
+			for(int i = 0; i < strng.length(); i++) {
+				c = strng.charAt(i);
+				digit = Character.getNumericValue(c);
+				total += digit;
+			}
+			
+			return total;
+		}
+		
+		
+//		// 3. 
+//		 static boolean isDivisibleByTwo(int subStrnParse) {
+//			 boolean isDivisible;
+//			 if()
+//			 return true;
+//		 }
 	}
 	
 	public static String revRot(String strng, int sz) {
